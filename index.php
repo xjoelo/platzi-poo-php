@@ -1,14 +1,22 @@
 <?php 
 include 'greet.php';
 
-
+class Person
+{
+    public function greet()
+    {
+        return "Hola $this->name";
+    }
+}
+ 
 class User
 {
     public $type; 
 }
 
-class Admin
+class Admin extends Person
 {
+    public $name = "Administrador";
     public function greet()
     {
         return "Hola Administrador";
@@ -22,6 +30,6 @@ echo $user->type->greet();
 
 echo "<br>";
 
-$greet = greet('joel','como estas');
-echo $greet;
+// $greet = greet('joel','como estas');
+// echo $greet;
 
